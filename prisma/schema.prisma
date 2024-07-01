@@ -56,5 +56,5 @@ model OrderProduct {
   note      String?
   quantity  Int
 
-  @@unique([orderId, productId])
+  //@@unique([orderId, productId])
 }
