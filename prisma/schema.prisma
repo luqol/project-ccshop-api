@@ -12,3 +12,50 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+
+model Product {
+  id          String @id @default(uuid())
+  name        String @unique
+  price       Int
+  description String
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orderProducts OrderProduct[]
+}
+
+model Client {
+  id          String @id @default(uuid())
+  clientName  String
+  email       String
+  address     String
+  phone       Int
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orders      Order[]
+}
+
+model Order{
+  id          String @id @default(uuid())
+  client      Client? @relation(fields: [clientId], references: [id], onDelete: SetNull )
+  clientId    String?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orderProducts OrderProduct[]
+}
+
+model OrderProduct {
+  id        String @id @default(uuid())
+  order     Order? @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId   String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String?
+
+  note      String?
+  quantity  Int
+
+  @@unique([orderId, productId])
+}
