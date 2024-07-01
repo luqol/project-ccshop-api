@@ -23,9 +23,9 @@ function getProducts() {
     },
     {
       id: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d',
-      name: 'Drukarka 3D Prusa i3 MK3S+',
+      name: 'Drukarka 3D Prusa MK4',
       price: 3500,
-      description: 'Profesjonalna drukarka 3D Prusa i3 MK3S+.',
+      description: 'Profesjonalna drukarka 3D Prusa Mk4.',
     },
     {
       id: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43',
@@ -36,38 +36,28 @@ function getProducts() {
   ];
 }
 
-function getClients() {
+function getOrders() {
   return [
     {
-      id: 'c1bda045-735f-4d3d-9e3d-2e3d232c1c4d',
+      id: 'fc94c151-2497-4c1c-8a72-6c40b6d017b4',
       clientName: 'Jan Kowalski',
       email: 'jan.kowalski@example.com',
       address: 'ul. Polna 12, 00-001 Warszawa',
       phone: 123456789,
     },
     {
-      id: '3b841f25-8d0d-4c8e-b6b9-1a5f9a2f1c25',
+      id: '7fdc0a98-8c3d-4fd4-bdd9-f7d2c1d72c7b',
+      clientName: 'Jan Kowalski',
+      email: 'jan.kowalski@example.com',
+      address: 'ul. Polna 12, 00-001 Warszawa',
+      phone: 123456789,
+    },
+    {
+      id: '4e16d246-7240-4e7d-b618-47c4fd2e2f4b',
       clientName: 'Anna Nowak',
       email: 'anna.nowak@example.com',
       address: 'ul. Leśna 7, 00-002 Kraków',
       phone: 987654321,
-    },
-  ];
-}
-
-function getOrders() {
-  return [
-    {
-      id: 'fc94c151-2497-4c1c-8a72-6c40b6d017b4',
-      clientId: 'c1bda045-735f-4d3d-9e3d-2e3d232c1c4d',
-    },
-    {
-      id: '7fdc0a98-8c3d-4fd4-bdd9-f7d2c1d72c7b',
-      clientId: 'c1bda045-735f-4d3d-9e3d-2e3d232c1c4d',
-    },
-    {
-      id: '4e16d246-7240-4e7d-b618-47c4fd2e2f4b',
-      clientId: '3b841f25-8d0d-4c8e-b6b9-1a5f9a2f1c25',
     },
   ];
 }
@@ -116,12 +106,6 @@ async function seed() {
   await Promise.all(
     getProducts().map((product) => {
       return db.product.create({ data: product });
-    }),
-  );
-
-  await Promise.all(
-    getClients().map((client) => {
-      return db.client.create({ data: client });
     }),
   );
 
