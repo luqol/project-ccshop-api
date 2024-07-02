@@ -46,7 +46,7 @@ export class OrdersService {
             return order;
 
         } catch (err) {
-            throw new Error(err);
+            throw new Error(err.message);
         }
     }
 }
