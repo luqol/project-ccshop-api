@@ -5,6 +5,6 @@ import { PrismaService } from 'src/shared/services/prisma.service';
 
 @Module({
   controllers: [OrdersController],
-  providers: [OrdersService, PrismaService]
+  providers: [OrdersService, PrismaService],
 })
 export class OrdersModule {}

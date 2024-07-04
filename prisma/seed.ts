@@ -6,84 +6,84 @@ function getImages() {
   return [
     {
       img: 'FilamentPLAred.jpg',
-      productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256'
+      productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256',
     },
     {
       img: 'FilamentPLAblack.jpg',
-      productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256'
+      productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256',
     },
     {
       img: 'FilamentPLApurple.jpg',
-      productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256'
+      productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256',
     },
     {
       img: 'FilamentPLAsilver.jpg',
-      productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256'
+      productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256',
     },
     {
       img: 'FilamentABSred.jpg',
-      productId: 'cd8b1569-89d3-4a9d-8e0e-c81744d9e8b1'
+      productId: 'cd8b1569-89d3-4a9d-8e0e-c81744d9e8b1',
     },
     {
       img: 'FilamentABSblack.jpg',
-      productId: 'cd8b1569-89d3-4a9d-8e0e-c81744d9e8b1'
+      productId: 'cd8b1569-89d3-4a9d-8e0e-c81744d9e8b1',
     },
     {
       img: 'FilamentABSpurple.jpg',
-      productId: 'cd8b1569-89d3-4a9d-8e0e-c81744d9e8b1'
+      productId: 'cd8b1569-89d3-4a9d-8e0e-c81744d9e8b1',
     },
     {
       img: 'FilamentABSsilver.jpg',
-      productId: 'cd8b1569-89d3-4a9d-8e0e-c81744d9e8b1'
+      productId: 'cd8b1569-89d3-4a9d-8e0e-c81744d9e8b1',
     },
     {
       img: 'FilamentPTEGred.jpg',
-      productId: 'a2c6fd0a-6e4b-44a8-8778-cd3e7dc6bc93'
+      productId: 'a2c6fd0a-6e4b-44a8-8778-cd3e7dc6bc93',
     },
     {
       img: 'FilamentPTEGblack.jpg',
-      productId: 'a2c6fd0a-6e4b-44a8-8778-cd3e7dc6bc93'
+      productId: 'a2c6fd0a-6e4b-44a8-8778-cd3e7dc6bc93',
     },
     {
       img: 'FilamentPTEGpurple.jpg',
-      productId: 'a2c6fd0a-6e4b-44a8-8778-cd3e7dc6bc93'
+      productId: 'a2c6fd0a-6e4b-44a8-8778-cd3e7dc6bc93',
     },
     {
       img: 'FilamentPTEGsilver.jpg',
-      productId: 'a2c6fd0a-6e4b-44a8-8778-cd3e7dc6bc93'
+      productId: 'a2c6fd0a-6e4b-44a8-8778-cd3e7dc6bc93',
     },
     {
       img: 'mk4.jpg',
-      productId: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d'
+      productId: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d',
     },
     {
       img: 'mk4-1.jpg',
-      productId: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d'
+      productId: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d',
     },
     {
       img: 'mk4-2.jpg',
-      productId: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d'
+      productId: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d',
     },
     {
       img: 'mk4-3.jpg',
-      productId: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d'
+      productId: 'fb5f9aef-4168-41e3-9d5e-7cb1f719206d',
     },
     {
       img: 'ender3.jpg',
-      productId: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43'
-    }, 
+      productId: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43',
+    },
     {
       img: 'ender3-1.jpg',
-      productId: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43'
-    }, 
+      productId: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43',
+    },
     {
       img: 'ender3-2.jpg',
-      productId: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43'
-    }, 
+      productId: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43',
+    },
     {
       img: 'ender3-3.jpg',
-      productId: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43'
-    }, 
+      productId: '1d6c5e07-5e1d-4fd4-96bb-5fced61e1f43',
+    },
   ];
 }
 
@@ -189,7 +189,6 @@ function getOrderProducts() {
 }
 
 async function seed() {
-
   await Promise.all(
     getProducts().map((product) => {
       return db.product.create({ data: product });
@@ -215,4 +214,4 @@ async function seed() {
   );
 }
 
-seed()
+seed();

@@ -4,19 +4,18 @@ import { PrismaService } from 'src/shared/services/prisma.service';
 
 @Injectable()
 export class ProductsService {
-    constructor(private prismaService: PrismaService) {}
+  constructor(private prismaService: PrismaService) {}
 
-    public getAll(): Promise<Product[]> {
-        return this.prismaService.product.findMany({
-            include: { images: true },
-        });
-    }
+  public getAll(): Promise<Product[]> {
+    return this.prismaService.product.findMany({
+      include: { images: true },
+    });
+  }
 
-
-    public getById( id: Product['id']): Promise<Product>  | null {
-        return this.prismaService.product.findUnique( {
-            where: { id },
-            include: { images: true },
-        });
-    }
+  public getById(id: Product['id']): Promise<Product> | null {
+    return this.prismaService.product.findUnique({
+      where: { id },
+      include: { images: true },
+    });
+  }
 }

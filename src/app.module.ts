@@ -16,14 +16,13 @@ import { OrdersModule } from './orders/orders.module';
   imports: [
     ProductsModule,
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'client')
+      rootPath: join(__dirname, '..', 'client'),
     }),
-    OrdersModule
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
     consumer.apply(cors()).forRoutes({
