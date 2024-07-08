@@ -9,7 +9,6 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:devapp": "npm-run-all -s build copy-img start:dev copy-img",
     "start:dev": "nest start --watch",
     "copy-img": "copyfiles -u 1 images/**/* dist/images",
     "start:debug": "nest start --debug --watch",
